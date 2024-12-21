@@ -6,7 +6,7 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class StockServiceService {
-  apiUrl = "http://127.0.0.1:8000/stock";
+  apiUrl = "https://stock-application-445417.uc.r.appspot.com/stock";
 
   constructor(private http: HttpClient) {
   }
@@ -15,7 +15,4 @@ export class StockServiceService {
     return this.http.get<any>(`${this.apiUrl}/${ticker}`);
   }
 
-  getStockInfo(ticker: string): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/${ticker}/info`);
-  }
 }
