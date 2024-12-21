@@ -1,6 +1,10 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
+import { importProvidersFrom } from '@angular/core';
+import { AppModule } from './app/app.module';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';  // Import AppModule for routing
 
-bootstrapApplication(AppComponent, appConfig)
-  .catch((err) => console.error(err));
+// Bootstrap the app using bootstrapApplication for standalone component setup
+bootstrapApplication(AppComponent, {
+  providers: [importProvidersFrom(AppModule), provideAnimationsAsync('noop'), provideAnimationsAsync()]  // Use AppModule for routing
+});

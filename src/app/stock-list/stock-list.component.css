@@ -1,0 +1,107 @@
+/* stock-list.component.css */
+
+/* General Material Design tweaks (mostly layout related) */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+.mat-form-field {
+  width: 250px;
+  margin-right: 16px;
+}
+.mat-form-field input {
+  text-transform: uppercase;
+}
+
+.mat-raised-button {
+  padding: 0 16px;
+  min-width: 64px;
+  line-height: 36px;
+  background-color: #04375c; /* Blue button background */
+  color: white; /* White button text */
+}
+.mat-raised-button:hover{
+  background-color: #1976d2; /* Darker blue on hover */
+}
+.mat-mdc-raised-button {
+  padding: 0 16px;
+  min-width: 64px;
+  line-height: 36px;
+  background-color: #04375c; /* Blue button background */
+  color: white; /* White button text */
+  margin-left: 10px;
+  margin-bottom: 12px;
+}
+.mat-table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+.mat-header-cell {
+  font-weight: 500;
+  color: #333; /* Darker header text */
+  padding: 12px 16px;
+  text-align: left;
+  background-color: #e0e0e0; /* Light gray header background */
+}
+
+.mat-cell {
+  padding: 8px 16px;
+  border-bottom: 1px solid #eee; /* Lighter border color */
+  vertical-align: middle;
+}
+
+.mat-row:hover {
+  background-color: #f5f5f5; /* Lighter hover background */
+}
+tr.mat-row:nth-child(even) {
+  background-color: #f9f9f9; /* Alternating row background */
+}
+/* Specific to the error message */
+.error {
+  margin-top: 16px;
+  color: #d32f2f; /* Material Design error color */
+}
+
+/* Styles to center the spinner */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+/* Table specific improvements */
+.mat-table {
+  border-spacing: 0;
+  border: 1px solid #ddd; /* Add border to the table */
+}
+
+th.mat-header-cell,
+td.mat-cell {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+/* Responsive Table (Optional) */
+@media (max-width: 600px) {
+  .mat-table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .mat-table tr,
+  .mat-table th,
+  .mat-table td {
+    display: block;
+    width: auto;
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+  .mat-header-cell {
+    text-align: right;
+  }
+}
