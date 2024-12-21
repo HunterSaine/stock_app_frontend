@@ -1,65 +1,55 @@
 <div>
-  <mat-form-field appearance="fill">
-    <mat-label>Enter Stock Ticker</mat-label> <input matInput [(ngModel)]="ticker" placeholder="Ex. AAPL" >
-  </mat-form-field>
-  <button mat-raised-button color="primary" (click)="fetchStockData()">Fetch Stock Data</button>
+  <div class="form-field">
+    <label for="ticker">Enter Stock Ticker</label>
+    <input id="ticker" type="text" [(ngModel)]="ticker" placeholder="Ex. AAPL"/>
+  </div>
+  <div class="button-bar">
+    <button (click)="fetchStockData()">Fetch Stock Data</button>
+    <button (click)="clearStockData()">Clear Stock Data</button>
+    <button (click)="chartStockData()">Chart Stock Data</button>
+  </div>
 </div>
-<div *ngIf="stockName">
-  <h2>{{ stockName }}</h2>
+<div class="info">
+  <div *ngIf="stockName">
+    <h2>{{ stockName }}</h2>
+  </div>
+
+  <div *ngIf="loading" class="loading">
+    <div class="spinner"></div>
+  </div>
+
+  <div *ngIf="error" class="error">
+    <p>{{ error }}</p>
+  </div>
+
+  <div *ngIf="stockData.length > 0">
+    <table>
+      <thead>
+      <tr>
+        <th>Date</th>
+        <th>Open</th>
+        <th>High</th>
+        <th>Low</th>
+        <th>Close</th>
+        <th>Volume</th>
+        <th>Dividends</th>
+        <th>Stock Splits</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let element of stockData">
+        <td>{{ element.Date | date }}</td>
+        <td>${{ element.Open }}</td>
+        <td>${{ element.High }}</td>
+        <td>${{ element.Low }}</td>
+        <td>${{ element.Close }}</td>
+        <td>{{ element.Volume }}</td>
+        <td>{{ element.Dividends }}</td>
+        <td>{{ element['Stock Splits'] }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
-<div *ngIf="loading" style="display: flex; justify-content: center;">
-  <mat-spinner></mat-spinner>
-</div>
 
-<div *ngIf="error" class="error">
-  <p style="color: red;">{{ error }}</p>
-</div>
-
-<div *ngIf="stockData.length > 0">
-  <table mat-table [dataSource]="stockData" class="mat-elevation-z8">
-
-    <ng-container matColumnDef="Date">
-      <th mat-header-cell *matHeaderCellDef> Date </th>
-      <td mat-cell *matCellDef="let element"> {{ element.Date | date }} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="Open">
-      <th mat-header-cell *matHeaderCellDef> Open </th>
-      <td mat-cell *matCellDef="let element"> ${{ element.Open }} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="High">
-      <th mat-header-cell *matHeaderCellDef> High </th>
-      <td mat-cell *matCellDef="let element"> ${{ element.High }} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="Low">
-      <th mat-header-cell *matHeaderCellDef> Low </th>
-      <td mat-cell *matCellDef="let element"> ${{ element.Low }} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="Close">
-      <th mat-header-cell *matHeaderCellDef> Close </th>
-      <td mat-cell *matCellDef="let element"> ${{ element.Close }} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="Volume">
-      <th mat-header-cell *matHeaderCellDef> Volume </th>
-      <td mat-cell *matCellDef="let element"> {{ element.Volume }} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="Dividends">
-      <th mat-header-cell *matHeaderCellDef> Dividends </th>
-      <td mat-cell *matCellDef="let element"> {{ element.Dividends }} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="Stock Splits">
-      <th mat-header-cell *matHeaderCellDef> Stock Splits </th>
-      <td mat-cell *matCellDef="let element"> {{ element['Stock Splits'] }} </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-</div>
 

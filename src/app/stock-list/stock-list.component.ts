@@ -8,7 +8,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field'; // Import MatFormFieldModule
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {Observable} from 'rxjs';
 
 
 @Component({
@@ -24,6 +23,7 @@ import {Observable} from 'rxjs';
     MatInputModule,
     MatFormFieldModule,
     MatProgressSpinnerModule,
+    NgForOf,
   ],
   standalone: true
 })
@@ -33,7 +33,6 @@ export class StockListComponent implements OnInit {
   stockName: any;
   loading: boolean = false;
   error: string | null = null;
-  displayedColumns: string[] = ['Date', 'Open', 'High', 'Low', 'Close', 'Volume', 'Dividends', 'Stock Splits'];
 
   constructor(private stockService: StockServiceService) { }
 
@@ -69,6 +68,15 @@ export class StockListComponent implements OnInit {
         }
       );
     }
+  }
+  clearStockData(): void {
+    this.ticker = '';
+    this.stockData = [];
+    this.stockName = null;
+    this.error = null;
+  }
+  chartStockData(): void {
+    console.log('Charting stock data');
   }
 
 }
