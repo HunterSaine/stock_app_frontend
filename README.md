@@ -1,60 +1,20 @@
-# StockProjectFrontend
+Welcome to my application! The goal of this application is to fetch up to date stock data and display it in a user-friendly manner. It currently fetches and displays stock data based on input, but I plan on incorporating more features in the future, including charting and predictive pricing using AI.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
+Hosting:  
+The app is deployed on Firebase Hosting, providing fast, secure, and reliable delivery.  
 
-## Development server
+Backend:  
+The backend is hosted using Google Cloud App Engine, providing a scalable and reliable solution. The backend repository can be found here: https://github.com/HunterSaine/stock_app_backend
 
-To start a local development server, run:
+Technologies Used:  
+Angular: A robust framework for building dynamic, single-page applications.  
+TypeScript: Ensures type safety and better code maintainability.  
+RxJS: For reactive programming and managing asynchronous data streams.  
 
-```bash
-ng serve
-```
+Features:  
+Real-Time Data: Built-in real-time synchronization with Firestore.  
+Responsive Design: Works seamlessly across desktops, tablets, and mobile devices.  
+Scalable Architecture: Designed to handle growing user and data demands.  
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-# stock_app_frontend
+Deployment:  
+This application is continuously deployed using GitHub Actions. Any changes pushed to the main branch will automatically trigger a deployment to Firebase Hosting.

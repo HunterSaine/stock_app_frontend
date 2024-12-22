@@ -1,16 +1,26 @@
 <div>
-  <div class="form-field">
-    <label for="ticker">Enter Stock Ticker</label>
-    <input id="ticker" type="text" [(ngModel)]="ticker" placeholder="Ex. AAPL"/>
+  <div class="top-bar">
+    <div class="form-field">
+      <label for="ticker">Enter Stock Ticker</label>
+      <input id="ticker" type="text" [(ngModel)]="ticker" placeholder="Ex. AAPL" maxlength="5"/>
+    </div>
+<!--    <div class="frequent-tickers">-->
+<!--      <p>Or select from the following:</p>-->
+<!--      <button (click)="ticker = 'AAPL'; fetchStockData()">AAPL</button>-->
+<!--      <button (click)="ticker = 'GOOG'; fetchStockData()">GOOG</button>-->
+<!--      <button (click)="ticker = 'MSFT'; fetchStockData()">MSFT</button>-->
+<!--      <button (click)="ticker = 'AMZN'; fetchStockData()">AMZN</button>-->
+<!--      <button (click)="ticker = 'FB'; fetchStockData()">FB</button>-->
+<!--    </div>-->
   </div>
   <div class="button-bar">
     <button (click)="fetchStockData()">Fetch Stock Data</button>
     <button (click)="clearStockData()">Clear Stock Data</button>
-<!--    <button (click)="chartStockData()">Chart Stock Data</button>-->
+    <!--    <button (click)="chartStockData()">Chart Stock Data</button>-->
   </div>
 </div>
-<div >
-  <div *ngIf="stockName" class="info">
+<div>
+  <div *ngIf="stockName" class="info" align="center">
     <h2>{{ stockName }}</h2>
   </div>
 
