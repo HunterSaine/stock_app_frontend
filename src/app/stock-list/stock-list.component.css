@@ -78,11 +78,20 @@ button:hover {
 
 /* Table styles */
 table {
-  width: 100%;
+  width: 99%;
   border-collapse: collapse;
   margin-top: 20px;
 }
+.table-container {
+  display: flex;
+  justify-content: center;
 
+}
+.info {
+  margin-left: 20px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
 thead tr {
   background-color: #007bff;
   color: white;

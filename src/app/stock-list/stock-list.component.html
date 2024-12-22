@@ -6,11 +6,11 @@
   <div class="button-bar">
     <button (click)="fetchStockData()">Fetch Stock Data</button>
     <button (click)="clearStockData()">Clear Stock Data</button>
-    <button (click)="chartStockData()">Chart Stock Data</button>
+<!--    <button (click)="chartStockData()">Chart Stock Data</button>-->
   </div>
 </div>
-<div class="info">
-  <div *ngIf="stockName">
+<div >
+  <div *ngIf="stockName" class="info">
     <h2>{{ stockName }}</h2>
   </div>
 
@@ -22,7 +22,7 @@
     <p>{{ error }}</p>
   </div>
 
-  <div *ngIf="stockData.length > 0">
+  <div *ngIf="stockData.length > 0" class="table-container">
     <table>
       <thead>
       <tr>
