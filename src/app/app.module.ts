@@ -9,6 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatCardModule } from '@angular/material/card';
+import { ChartComponent } from './chart/chart.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { MatCardModule } from '@angular/material/card';
     MatTableModule,
     MatProgressSpinnerModule,
     MatCardModule,
+    ChartComponent
 
     // Use appRoutes for routing
   ],

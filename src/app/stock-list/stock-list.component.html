@@ -4,19 +4,19 @@
       <label for="ticker">Enter Stock Ticker</label>
       <input id="ticker" type="text" [(ngModel)]="ticker" placeholder="Ex. AAPL" maxlength="5"/>
     </div>
-<!--    <div class="frequent-tickers">-->
-<!--      <p>Or select from the following:</p>-->
-<!--      <button (click)="ticker = 'AAPL'; fetchStockData()">AAPL</button>-->
-<!--      <button (click)="ticker = 'GOOG'; fetchStockData()">GOOG</button>-->
-<!--      <button (click)="ticker = 'MSFT'; fetchStockData()">MSFT</button>-->
-<!--      <button (click)="ticker = 'AMZN'; fetchStockData()">AMZN</button>-->
-<!--      <button (click)="ticker = 'FB'; fetchStockData()">FB</button>-->
-<!--    </div>-->
+    <div class="frequent-tickers">
+      <p>Or select from the following:</p>
+      <button (click)="ticker = 'AAPL'; fetchStockData()">AAPL</button>
+      <button (click)="ticker = 'GOOG'; fetchStockData()">GOOG</button>
+      <button (click)="ticker = 'MSFT'; fetchStockData()">MSFT</button>
+      <button (click)="ticker = 'AMZN'; fetchStockData()">AMZN</button>
+      <button (click)="ticker = 'META'; fetchStockData()">META</button>
+    </div>
   </div>
   <div class="button-bar">
     <button (click)="fetchStockData()">Fetch Stock Data</button>
     <button (click)="clearStockData()">Clear Stock Data</button>
-    <!--    <button (click)="chartStockData()">Chart Stock Data</button>-->
+    <button (click)="chartStockData(); showChart()">Chart Stock Data</button>
   </div>
 </div>
 <div>
@@ -32,7 +32,11 @@
     <p>{{ error }}</p>
   </div>
 
-  <div *ngIf="stockData.length > 0" class="table-container">
+  <div *ngIf="stockData.length > 0" class="data-container">
+    <div class="chart-container">
+    <app-chart *ngIf="isChartVisible" [chart_data]="stockData.reverse()"></app-chart>
+    </div>
+    <div class="table-container">
     <table>
       <thead>
       <tr>
@@ -59,6 +63,7 @@
       </tr>
       </tbody>
     </table>
+      </div>
   </div>
 </div>
 

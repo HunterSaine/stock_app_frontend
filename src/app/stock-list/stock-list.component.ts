@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field'; // Import MatFormFieldModule
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {ChartComponent} from '../chart/chart.component';
 
 
 @Component({
@@ -24,6 +25,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatFormFieldModule,
     MatProgressSpinnerModule,
     NgForOf,
+    ChartComponent,
   ],
   standalone: true
 })
@@ -33,6 +35,7 @@ export class StockListComponent implements OnInit {
   stockName: any;
   loading: boolean = false;
   error: string | null = null;
+  isChartVisible: boolean = false;
 
   constructor(private stockService: StockServiceService) { }
 
@@ -42,6 +45,7 @@ export class StockListComponent implements OnInit {
     if (this.ticker) {
       this.loading = true;
       this.error = null;
+      this.stockName = null;
       this.stockData = [];
       this.stockService.getStockData(this.ticker).subscribe(
         (data: any[]) => {
@@ -74,9 +78,13 @@ export class StockListComponent implements OnInit {
     this.stockData = [];
     this.stockName = null;
     this.error = null;
+    this.isChartVisible = false;
   }
   chartStockData(): void {
     console.log('Charting stock data');
+  }
+  showChart(): void {
+    this.isChartVisible = true;
   }
 
 }
