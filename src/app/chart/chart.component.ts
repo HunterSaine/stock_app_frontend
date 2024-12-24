@@ -1,5 +1,4 @@
 import {Component, Input, SimpleChanges} from '@angular/core';
-import {DatePipe, NgForOf} from '@angular/common';
 import {BaseChartDirective} from 'ng2-charts';
 import {
   Chart as ChartJS,
