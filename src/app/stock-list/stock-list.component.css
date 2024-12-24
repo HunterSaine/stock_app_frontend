@@ -87,6 +87,10 @@ table {
   border-collapse: collapse;
   margin-top: 20px;
 }
+.data-container {
+  display: flex;
+  flex-direction: column;
+}
 .table-container {
   display: flex;
   justify-content: center;
