@@ -10,6 +10,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatCardModule } from '@angular/material/card';
 import { ChartComponent } from './chart/chart.component';
+import { BaseChartDirective } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ChartComponent } from './chart/chart.component';
     MatTableModule,
     MatProgressSpinnerModule,
     MatCardModule,
-    ChartComponent
+    ChartComponent,
+    BaseChartDirective
 
     // Use appRoutes for routing
   ],
