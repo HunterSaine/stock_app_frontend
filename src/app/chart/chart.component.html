@@ -1,11 +1,27 @@
+<div class = "chart-container">
+  <div>
+    <div>
+      <label>
+        <input type="checkbox" [(ngModel)]="showOpen" (change)="updateChart()" /> Open Price
+      </label>
+      <label>
+        <input type="checkbox" [(ngModel)]="showClose" (change)="updateChart()" /> Close Price
+      </label>
+      <label>
+        <input type="checkbox" [(ngModel)]="showHigh" (change)="updateChart()" /> High Price
+      </label>
+      <label>
+        <input type="checkbox" [(ngModel)]="showLow" (change)="updateChart()" /> Low Price
+      </label>
+    </div>
+  </div>
+  <canvas baseChart
+          [datasets]="lineChartDataSet"
+          [labels]="lineChartLabels"
+          [options]="lineChartOptions"
+          [legend]="lineChartLegend"
+          [type]="lineChartType"
+          [plugins]="lineChartPlugins">
+  </canvas>
 
-<canvas baseChart
-        [datasets]="lineChartDataSet"
-        [labels]="lineChartLabels"
-        [options]="lineChartOptions"
-        [legend]="lineChartLegend"
-        [type]="lineChartType"
-        [plugins]="lineChartPlugins">
-
-</canvas>
-
+</div>
